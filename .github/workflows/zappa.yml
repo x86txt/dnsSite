@@ -1,0 +1,51 @@
+name: Master Workflow
+
+on:
+  workflow_dispatch:
+    branches:
+      - 'main'
+  push:
+    branches:
+      - 'main'
+    paths-ignore:
+      - '**/README.md'
+      - '**/.github/CODEOWNERS'
+    paths:
+      - Pipfile*
+      - zappa_settings.json
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+
+    - name: Setting up AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+        aws-region: us-east-1
+
+    - name: Create virtual env
+      run: |
+        pip install virtualenv
+        python -m virtualenv env
+
+    - name: Install Requirements
+      run: |
+        . env/bin/activate
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        deactivate
+
+    - name: Zappa deployments
+      run:
+        . env/bin/activate
+        zappa update production --all
+
