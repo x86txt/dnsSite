@@ -1,4 +1,4 @@
-name: deploy dnsSite lambda to aws
+name: 'deploy dnsSite lambda to aws'
 
 on:
   workflow_dispatch:
@@ -11,8 +11,8 @@ on:
       - '**/README.md'
       - '**/.github/CODEOWNERS'
     paths:
-      - Pipfile*
-      - zappa_settings.json
+      - 'Pipfile*'
+      - 'zappa_settings.json'
 
 jobs:
   build:
@@ -45,7 +45,7 @@ jobs:
         deactivate
 
     - name: Zappa deployment to AWS Lambda
-      run:
+      run: |
         . env/bin/activate
         zappa update production --all
 
