@@ -5,7 +5,6 @@
         "domain": "dns.secunit.io",
         "route53_enabled": false,
         "certificate_arn": "arn:aws:acm:us-east-1:663135667448:certificate/305591e4-1f8d-4e43-b1f8-94ce3c897256",
-        "profile_name": "default",
         "project_name": "dnswebapp",
         "runtime": "python3.9",
         "s3_bucket": "zappa-1np4kbo9w"
