@@ -34,15 +34,10 @@ jobs:
         pip install virtualenv
         python -m virtualenv env
 
-    - name: Install Requirements
+    - name: Install Requirements & run Zappa
       run: |
         . env/bin/activate
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        zappa update --all
         deactivate
-
-    - name: Zappa deployment to AWS Lambda
-      run: |
-        . env/bin/activate
-        zappa update
-
