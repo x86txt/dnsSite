@@ -1,4 +1,4 @@
-name: Master Workflow
+name: deploy dnsSite lambda to aws
 
 on:
   workflow_dispatch:
@@ -44,7 +44,7 @@ jobs:
         pip install -r requirements.txt
         deactivate
 
-    - name: Zappa deployments
+    - name: Zappa deployment to AWS Lambda
       run:
         . env/bin/activate
         zappa update production --all
