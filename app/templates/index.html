@@ -1,26 +1,8 @@
 {% extends "base.html" %}
-{% from 'bootstrap5/form.html' import render_form, render_field, render_form_row %}
-
 {% block content %}
-<h3>welcome to my dns tools website project</h3>
-<h4>please use the menu above</h4>
-    {% if form %}
-    {{ render_form(form) }}
-    <br>
-    {% endif %}
-todo:<br />
-<ul class="fa-ul">
-    <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>A record lookup</li>
-    <li><span class="fa-li"><i class="fa-solid fa-spinner fa-pulse"></i></span>PTR record lookup</li>
-    <li><span class="fa-li"><i class="fa-regular fa-square"></i></span>CNAME record lookup</li>
-    <li><span class="fa-li"><i class="fa-regular fa-square"></i></span>NS record lookup</li>
-    <li><span class="fa-li"><i class="fa-regular fa-square"></i></span>SOA record lookup</li>
-    <li><span class="fa-li"><i class="fa-regular fa-square"></i></span>MX record lookup</li>
-    <li><span class="fa-li"><i class="fa-regular fa-square"></i></span>SPF record lookup</li>
-    <li><span class="fa-li"><i class="fa-regular fa-square"></i></span>DKIM record lookup</li>
-    <li><span class="fa-li"><i class="fa-regular fa-square"></i></span>DNSKEY record lookup</li>
-    <li><span class="fa-li"><i class="fa-regular fa-square"></i></span>DS record lookup</li>
-</ul>
-<i class="fa-regular fa-square"></i> = pending, <i class="fa-solid fa-spinner fa-pulse"></i> = in progress, <i class="fa-solid fa-check-square"></i> = done
-
+<h3>welcome to my dns tools api website project</h3>
+    right now, there are 2 API functions that can be used:
+    <ul class="fa-ul">
+        <li><span class="fa-li"><i class="fa-light fa-bring-forward"></i></span>an 'a' record lookup</li>
+        <li><span class="fa-li"><i class="fa-light fa-send-backward"></i></span>a 'ptr' record lookup</li>
 {% endblock %}

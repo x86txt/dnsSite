@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
-{% from 'bootstrap5/form.html' import render_form, render_field, render_form_row %}
+{% from 'bootstrap5/form.html' import render_form, render_field %}
 
 {% block content %}
-<h3>dns lookup</h3>
+<h3></h3>
     <div class="row">
         <div class="col-md-4">
+        <!-- <div class="col-xs-3"> -->
             {{ render_form(form) }}
         </div>
-    </div>
+        <div>
+            <br />
+            {{ render_messages(container=False, dismissible=True, dismiss_animate=True) }}
+        </div>
     </div>
 {% endblock %}
