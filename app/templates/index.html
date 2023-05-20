@@ -1,8 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
-<h3>welcome to my dns tools api website project</h3>
-    right now, there are 2 API functions that can be used:
-    <ul class="fa-ul">
-        <li><span class="fa-li"><i class="fa-light fa-bring-forward"></i></span>an 'a' record lookup</li>
-        <li><span class="fa-li"><i class="fa-light fa-send-backward"></i></span>a 'ptr' record lookup</li>
+    <div class="alert alert-dismissible alert-success">
+    welcome to my dns tools api website project
+    </div>
+    <br />
+    <br />
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">api endpoints (click to run example query)</a>
+        <a href="https://dns.secunit.io/api/a/secunit.io" class="list-group-item list-group-item-action"><i class="fa-light fa-bring-forward"></i><b>&nbsp;dns 'a' record lookup:</b>&nbsp;&nbsp;/api/a/&lt;domain&gt;<br />
+            <small>ex: https://dns.secunit.io/api/a/secunit.io</small></a>
+        <a href="https://dns.secunit.io/api/ptr/127.0.0.1" class="list-group-item list-group-item-action"><i class="fa-light fa-send-backward"></i><b>&nbsp;dns 'ptr' record lookup:</b>&nbsp;&nbsp;/api/ptr/&lt;ip-address&gt;<br />
+            <small>ex: https://dns.secunit.io/api/ptr/127.0.0.1</small></a>
+        <a href="https://dns.secunit.io/api/spf/secunit.io" class="list-group-item list-group-item-action"><i class="fa-light fa-envelope-open-text"></i><b>&nbsp;dns 'spf' record lookup:</b>&nbsp;&nbsp;/api/spf/&lt;domain&gt;<br />
+            <small>ex: https://dns.secunit.io/api/spf/secunit.io</small></a>
+        <a href="https://dns.secunit.io/api/dmarc/secunit.io" class="list-group-item list-group-item-action"><i class="fa-light fa-envelope-dot"></i><b>&nbsp;dns 'dmarc' record lookup:</b>&nbsp;&nbsp;/api/dmarc/&lt;domain&gt;<br />
+            <small>ex: https://dns.secunit.io/api/dmarc/secunit.io</small></a>
+        <a href="https://dns.secunit.io/api/dkim/secunit.io/selector1" class="list-group-item list-group-item-action"><i class="fa-light fa-envelope-circle-check"></i><b>&nbsp;dns 'dkim' record lookup:</b>&nbsp;&nbsp;/api/dkim/&lt;domain&gt;/&lt;selector&gt;<br />
+            <small>ex: https://dns.secunit.io/api/dkim/secunit.io/selector1</small></a>
+    </div>
+    <br />
+    <br />
+    <div class="alert alert-dismissible alert-info">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>Note:</strong> for each of these functions, a malware and/or dnsbl lookup is performed and if there is not a positive match, the dns lookup is performed.
+    </div>
+    <br />
+    <br />
+
 {% endblock %}

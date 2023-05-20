@@ -1,7 +1,7 @@
 import socket
 import re
 from app import app
-from app.forms import Aform, PTRform, Emailform
+from app.retired.forms import Aform, PTRform, Emailform
 from flask import render_template, flash, request, Markup, redirect
 
 
@@ -17,7 +17,7 @@ socket.timeout(5)
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html.old', title='welcome to dnsTools!')
+    return render_template('index.html', title='welcome to dnsTools!')
 
 
 # this is for a typical A record lookup
@@ -79,11 +79,3 @@ def email():
             flash('the email address ' + cemail + ' is valid', 'success')
         return redirect('/email')
     return render_template('dns.html', title='email validation', form=form)
-
-
-# this page will display the result of the dns lookup
-@app.route('/result', methods=['GET'])
-def result():
-    addr = request.args.get('addr')
-    hostname = request.args.get('hostname')
-    return render_template('result.html', title='result', addr=addr, hostname=hostname)
