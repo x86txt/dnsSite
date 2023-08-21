@@ -20,11 +20,9 @@ Want to try a Live Version? Click the Uptime button above.
 
 ## `curl example:`
 ```
-
 $ curl https://dns.secunit.io/api/a/secunit.io
 {"addr":"104.21.4.4","hostname":"secunit.io"}
 
 $ curl https://dns.secunit.io/api/spf/secunit.io
 {"result":"v=spf1 include:sendgrid.net mx include:spf.protection.outlook.com -all","spf":"secunit.io"}
-
 ```
