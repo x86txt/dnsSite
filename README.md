@@ -17,7 +17,6 @@ Want to try a Live Version? Click the Uptime button above.
 > 08/21/2023: a recent security package update has broken several api routes, including ptr and dkim lookups. these will be fixed soon. 
 
 &nbsp;
-&nbsp;
 
 ## `curl example:`
 ```
