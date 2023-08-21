@@ -21,7 +21,7 @@ $ curl https://dns.secunit.io/api/spf/secunit.io
 
 $ curl 
 ```
-<br />
-<br />
-> [!IMPORTANT] 
+&nbsp;
+&nbsp;
+> [!IMPORTANT]  
 > 08/21/2023: a recent security package update has broken several api routes, including ptr and dkim lookups. these will be fixed soon.  
