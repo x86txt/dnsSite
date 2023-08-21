@@ -1,5 +1,6 @@
 argcomplete==3.1.1
 blinker==1.6.2
+Bootstrap-Flask==2.3.0
 boto3==1.28.30
 botocore==1.31.30
 certifi==2023.7.22
@@ -11,7 +12,6 @@ dnspython==2.4.2
 dominate==2.8.0
 durationpy==0.5
 Flask==2.3.2
-Flask-Bootstrap==3.3.7.1
 Flask-Cors==4.0.0
 Flask-WTF==1.1.1
 hjson==3.1.0
