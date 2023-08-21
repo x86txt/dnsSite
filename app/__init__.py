@@ -27,7 +27,7 @@ app.secret_key = os.environ.get('FLASK_SECRET_KEY') or secret_key
 
 # workaround for circular imports, ignore ide lint error
 # note: this one imports from the app declaration above, not the folder app which is the package name
-from app.templates.old import routes
+# from app.templates.old import routes
 from app import apiroutes
 from app import security
 
